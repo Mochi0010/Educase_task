@@ -52,7 +52,7 @@ body {
 .mobile-frame {
   width: 375px;
   height: 812px;
-  background: var(--white);
+  background: var(--bg);
   border: 1.5px dashed var(--border);
   border-radius: var(--radius-card);
   overflow: hidden;
@@ -409,8 +409,8 @@ body {
   position: absolute;
   bottom: -2px;
   left: 40px;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: var(--purple);
   color: #fff;
