@@ -12,9 +12,9 @@
   --text-muted: #8B959E;
   --border: #CBCBCB;
   --disabled: #CBCBCB;
-  --radius-btn: 25px;
+  --radius-btn: 7px;
   --radius-input: 8px;
-  --radius-card: 12px;
+  --radius-card: 0px;
 }
 
 *,
@@ -49,7 +49,7 @@ body {
 
 .mobile-frame {
   width: 360px;
-  height: 700px;
+  height: 780px;
   background: var(--white);
   border: 1.5px dashed var(--border);
   border-radius: var(--radius-card);
@@ -197,7 +197,7 @@ body {
 
 .btn-secondary {
   background: var(--purple-light);
-  color: var(--purple);
+  color: var(--text-dark);
 }
 
 .btn-secondary:hover {
@@ -250,7 +250,7 @@ body {
   font-size: 0.85rem;
   color: var(--text-grey);
   line-height: 1.6;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .auth__form {
