@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 export default function SignupScreen({ onSignup }) {
   const [form, setForm] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    password: '',
-    company: '',
+    fullName: 'Marry Doe',
+    phone: '9876543210',
+    email: 'Marry@Gmail.Com',
+    password: 'password123',
+    company: 'Marry Doe',
     isAgency: 'yes',
   });
 

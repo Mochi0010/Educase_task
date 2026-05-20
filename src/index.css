@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
 
 :root {
   --purple: #6C25FF;
@@ -7,9 +7,11 @@
   --purple-lightest: #F4EEFF;
   --bg: #F4F5FA;
   --white: #FFFFFF;
-  --text-dark: #1D1517;
-  --text-grey: #4E5D6A;
-  --text-muted: #8B959E;
+  --text-dark: #1D2226;
+  --text-grey: #1D2226;
+  --text-muted: #919191;
+  --label-purple: #6C25FF;
+  --req-red: #DD4A3D;
   --border: #CBCBCB;
   --disabled: #CBCBCB;
   --radius-btn: 7px;
@@ -26,7 +28,7 @@
 }
 
 html, body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   background: var(--bg);
   color: var(--text-dark);
@@ -48,8 +50,8 @@ body {
 }
 
 .mobile-frame {
-  width: 360px;
-  height: 780px;
+  width: 375px;
+  height: 812px;
   background: var(--white);
   border: 1.5px dashed var(--border);
   border-radius: var(--radius-card);
@@ -68,8 +70,7 @@ body {
   }
   .mobile-frame {
     width: 100%;
-    min-height: 100dvh;
-    max-height: none;
+    height: 100dvh;
     border-radius: 0;
     border: none;
   }
@@ -93,6 +94,10 @@ body {
   background: var(--white);
   will-change: transform, opacity;
   overflow-y: auto;
+}
+
+.screen::-webkit-scrollbar {
+  width: 0;
 }
 
 .screen.slide-in {
@@ -145,19 +150,19 @@ body {
 }
 
 .welcome__title {
-  font-size: 1.65rem;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 500;
   color: var(--text-dark);
-  line-height: 1.25;
-  letter-spacing: -0.3px;
+  line-height: 1.2;
   margin-bottom: 8px;
 }
 
 .welcome__desc {
-  font-size: 0.875rem;
-  color: var(--text-grey);
-  line-height: 1.6;
-  margin-bottom: 24px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.45;
+  margin-bottom: 28px;
 }
 
 .welcome__actions {
@@ -174,12 +179,12 @@ body {
   padding: 14px 24px;
   border-radius: var(--radius-btn);
   font-family: inherit;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
   border: none;
   outline: none;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  transition: background 0.2s, transform 0.15s;
 }
 
 .btn:active {
@@ -188,7 +193,7 @@ body {
 
 .btn-primary {
   background: var(--purple);
-  color: #fff;
+  color: #FFFFFF;
 }
 
 .btn-primary:hover {
@@ -206,7 +211,7 @@ body {
 
 .btn-disabled {
   background: var(--disabled);
-  color: #fff;
+  color: #FFFFFF;
   cursor: not-allowed;
 }
 
@@ -218,38 +223,23 @@ body {
   transform: none;
 }
 
-.btn-ghost {
-  background: transparent;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-}
-
-.btn-ghost:hover {
-  border-color: var(--purple);
-  color: var(--purple);
-}
-
 .auth {
   padding: 32px 24px 24px;
 }
 
-.auth::-webkit-scrollbar {
-  width: 0;
-}
-
 .auth__title {
-  font-size: 1.55rem;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 500;
   color: var(--text-dark);
   line-height: 1.3;
-  letter-spacing: -0.3px;
-  margin-bottom: 6px;
+  margin-bottom: 14px;
 }
 
 .auth__desc {
-  font-size: 0.85rem;
-  color: var(--text-grey);
-  line-height: 1.6;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.45;
   margin-bottom: 32px;
 }
 
@@ -270,7 +260,8 @@ body {
 .field__input {
   width: 100%;
   padding: 16px 14px 8px;
-  font-size: 0.88rem;
+  font-size: 13px;
+  font-weight: 400;
   font-family: inherit;
   border: 1px solid var(--border);
   border-radius: var(--radius-input);
@@ -278,6 +269,12 @@ body {
   color: var(--text-dark);
   outline: none;
   transition: border-color 0.2s;
+}
+
+.field__input::placeholder {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .field__input:focus {
@@ -289,7 +286,8 @@ body {
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 0.88rem;
+  font-size: 14px;
+  font-weight: 400;
   color: var(--text-muted);
   pointer-events: none;
   transition: all 0.2s;
@@ -301,14 +299,14 @@ body {
 .field__input:not(:placeholder-shown) ~ .field__label {
   top: 0;
   transform: translateY(-50%);
-  font-size: 0.72rem;
-  color: var(--purple);
-  font-weight: 500;
+  font-size: 13px;
+  color: var(--label-purple);
+  font-weight: 400;
 }
 
 .field__label--req::after {
   content: '*';
-  color: #FF4D4D;
+  color: var(--req-red);
   margin-left: 1px;
 }
 
@@ -319,9 +317,9 @@ body {
 }
 
 .radio-group__title {
-  font-size: 0.82rem;
-  color: var(--text-grey);
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-dark);
 }
 
 .radio-group__options {
@@ -334,7 +332,8 @@ body {
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  font-size: 0.88rem;
+  font-size: 14px;
+  font-weight: 400;
   color: var(--text-dark);
 }
 
@@ -374,11 +373,10 @@ body {
 }
 
 .profile__header {
-  padding: 18px 24px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  padding: 18px 24px 14px;
+  font-size: 18px;
+  font-weight: 400;
   color: var(--text-dark);
-  border-bottom: 1px solid #ECECEC;
 }
 
 .profile__body {
@@ -410,9 +408,9 @@ body {
 .profile__badge {
   position: absolute;
   bottom: -2px;
-  right: -2px;
-  width: 22px;
-  height: 22px;
+  left: 40px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: var(--purple);
   color: #fff;
@@ -420,17 +418,13 @@ body {
   align-items: center;
   justify-content: center;
   border: 2px solid var(--white);
-  cursor: pointer;
-  transition: transform 0.2s;
+  pointer-events: none;
 }
 
-.profile__badge:hover {
-  transform: scale(1.1);
-}
-
-.profile__badge svg {
-  width: 11px;
-  height: 11px;
+.profile__badge svg,
+.profile__badge img {
+  width: 14px;
+  height: 14px;
 }
 
 .profile__info {
@@ -440,21 +434,28 @@ body {
 }
 
 .profile__name {
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   color: var(--text-dark);
+  line-height: 1.27;
+  text-transform: capitalize;
 }
 
 .profile__email {
-  font-size: 0.82rem;
-  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.36;
+  text-transform: capitalize;
 }
 
 .profile__bio {
-  font-size: 0.82rem;
-  color: var(--text-grey);
-  line-height: 1.65;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.57;
   margin-bottom: 20px;
+  text-transform: capitalize;
 }
 
 .profile__divider {

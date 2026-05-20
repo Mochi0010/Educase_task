@@ -1,6 +1,7 @@
-import { Camera } from 'lucide-react';
+import cameraIcon from '../Images/Group 1585.svg';
+import avatarImg from '../Images/Ellipse 114@2x.png';
 
-export default function ProfileScreen({ user, onLogout }) {
+export default function ProfileScreen({ user }) {
   const name = user?.name || 'Marry Doe';
   const email = user?.email || 'Marry@Gmail.Com';
 
@@ -13,11 +14,11 @@ export default function ProfileScreen({ user, onLogout }) {
             <div className="profile__avatar-wrap">
               <img
                 className="profile__avatar"
-                src="/avatar.png"
+                src={avatarImg}
                 alt={name}
               />
               <div className="profile__badge">
-                <Camera />
+                <img src={cameraIcon} alt="" />
               </div>
             </div>
             <div className="profile__info">
